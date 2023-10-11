@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dream Interpretation</title>
+    <!-- Include Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Include jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+</head>
+<body>
+
+<div class="container mt-5">
+    <h2>Dream Interpretation</h2>
+    <div class="form-group">
+        <label for="dreamText">Enter your dream:</label>
+        <textarea class="form-control" id="dreamText" rows="3"></textarea>
+    </div>
+    <button id="translateBtn" class="btn btn-primary">Translate</button>
+
+    <h3 class="mt-5">Interpretation</h3>
+    <p id="interpretationResult"></p>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $('#translateBtn').click(function () {
+            var dreamText = $('#dreamText').val();
+            $.ajax({
+                type: 'GET',
+                url: '/api/promote/translate',
+                data: {text: dreamText},
+                success: function (data) {
+                    $('#interpretationResult').text(data);
+                },
+                error: function (error) {
+                    $('#interpretationResult').text('Error: Unable to get interpretation');
+                    console.log(error);
+                }
+            });
+        });
+    });
+</script>
+
+<!-- Include Bootstrap JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>
