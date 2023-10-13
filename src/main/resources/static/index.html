@@ -94,7 +94,6 @@
                 <option value="متزوجة">متزوجة</option>
                 <option value="عزباء">عزباء</option>
                 <option value="مطلقة">مطلقة</option>
-                <option value="زوجي متوفي">ارملة</option>
             </select>
         </div>
     </div>
@@ -107,8 +106,11 @@
                 <option value="" disabled selected>اختر الفئة العمرية</option>
                 <option value="شاب">شاب</option>
                 <option value="شابة">شابة</option>
-                <option value="عمري ثلاثين سنة">عمر الثلاثين</option>
-                <option value="عمري اربعين سنة">عمر الاربعين</option>
+                <option value="عمري 30 سنة">عمر الثلاثين</option>
+                <option value="عمري 40 سنة">عمر الاربعين</option>
+                <option value="عمري 50 سنة">عمر الخمسين</option>
+                <option value="عمري 60 سنة">عمر الخمسين</option>
+
             </select>
         </div>
     </div>
@@ -173,7 +175,7 @@
             var dreamText = $('#dreamText').val();
             var maritalStatus = $('#maritalStatus').val();
             var ageGroup = $('#ageGroup').val();
-            var dreamText1=maritalStatus+"  "+ageGroup+"  "+dreamText;
+            var dreamText1="أنا  " maritalStatus+" و "+ageGroup+" الحلم هو :  "+dreamText;
 
             if (!maritalStatus || !ageGroup) {
                 $('#selectOptionsModal').modal('show'); // Show the modal
