@@ -8,44 +8,198 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
     <!-- Include jQuery -->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4221011770969357"
+            crossorigin="anonymous"></script>
+    <style>
+            .textAreaCustom {
+                font-size: 1rem;
+                line-height: 1.5;
+                border-radius: 10px;
+                border: 4px solid #ced4da;
+                padding: 15px;
+                background-color: #f8f8f8;
+                resize: vertical;
+                transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            }
+
+            .textAreaCustom:focus {
+                border-color: #80bdff;
+                box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+                outline: none;
+            }
+
+            label {
+                font-weight: bold;
+                color: #495057;
+            }
+            </style>
+
 </head>
 <body>
 
 <div class="container mt-5">
-    <center><h2>تفسير الأحلام</h2></center>
+<!--    <center><h2>تفسير الأحلام</h2></center>-->
+    <div class="text-center">
+        <img src="./1.png" class="img-fluid rounded mx-auto d-block" alt="Responsive image" style="max-width: 100%;">
+        <h1 class="mt-4">تفسيـــــر الأحــــــلام</h1>
+        <p class="lead">الأحلام جسور معلقة بين العالم المعروف والمجهول، صفحات بيضاء تمتلئ برموز وإشارات تعبر عن أغوار النفس البشرية.</p>
+    </div>
     <div class="form-group">
 <!--        <h4>فسر حلم كل دقيقتين</h4>-->
     </div>
     <div class="form-group">
+<!--        <center><h4 class="mt-5">تفسير الحلم وفقا لتفسيرات ابن سيرين</h4></center>-->
+<!--            <p id="interpretationResult"></p>-->
 
-        <center><label for="dreamText">أكتب حلمــــك:</label></center>
-        <textarea class="form-control" id="dreamText" rows="3"></textarea>
+        <div class="card">
+            <div class="card-header text-center">
+                <h4 class="my-0">تفسير الحلم وفقا لتفسيرات ابن سيرين</h4>
+            </div>
+            <div class="card-body">
+                <p id="interpretationResult" class="card-text"></p>
+            </div>
+        </div>
+<!--        <center><label for="dreamText"><h3>أكتب حلمــــك</h3></label></center>-->
+<!--        <textarea class="form-control" id="dreamText" rows="4" ></textarea>-->
+
+        <div class="form-group">
+            <center><label for="dreamText" class="h5">أكتب حلمك:</label></center>
+            <textarea class="form-control rounded textAreaCustom" id="dreamText" rows="4" placeholder="اكتب تفاصيل الحلم هنا..."></textarea>
+        </div>
+
     </div>
+
+<!--    <div class="form-group" width="30%">-->
+<!--        <center><label for="maritalStatus">الحالة الزوجية:</label></center>-->
+<!--        <select class="form-control" id="maritalStatus" required>-->
+<!--            <option value="" disabled selected>اختر الحالة الزوجية</option>-->
+<!--            <option value="أعزب">أعزب</option>-->
+<!--            <option value="متزوج">متزوج</option>-->
+<!--            <option value="متزوجة">متزوجة</option>-->
+<!--            <option value="عزباء">عزباء</option>-->
+<!--            <option value="مطلقة">مطلقة</option>-->
+<!--            <option value="زوجي متوفي">ارملة</option>-->
+
+
+<!--        </select>-->
+<!--    </div>-->
+
+    <div class="form-group row">
+        <label for="maritalStatus" class="col-sm-4 col-form-label text-center">الحالة الزوجية:</label>
+        <div class="col-sm-8">
+            <select class="form-control" id="maritalStatus" required>
+                <option value="" disabled selected>اختر الحالة الزوجية</option>
+                <option value="أعزب">أعزب</option>
+                <option value="متزوج">متزوج</option>
+                <option value="متزوجة">متزوجة</option>
+                <option value="عزباء">عزباء</option>
+                <option value="مطلقة">مطلقة</option>
+                <option value="زوجي متوفي">ارملة</option>
+            </select>
+        </div>
+    </div>
+
+
+    <div class="form-group row">
+        <label for="ageGroup" class="col-sm-4 col-form-label text-center">الفئة العمرية:</label>
+        <div class="col-sm-8">
+            <select class="form-control" id="ageGroup" required>
+                <option value="" disabled selected>اختر الفئة العمرية</option>
+                <option value="شاب">شاب</option>
+                <option value="شابة">شابة</option>
+                <option value="عمري ثلاثين سنة">عمر الثلاثين</option>
+                <option value="عمري اربعين سنة">عمر الاربعين</option>
+            </select>
+        </div>
+    </div>
+
+<!--    <div class="form-group" width="30%">-->
+<!--        <center><label for="ageGroup">الفئة العمرية:</label></center>-->
+<!--        <select class="form-control" id="ageGroup" required>-->
+<!--            <option value="" disabled selected>اختر الفئة العمرية</option>-->
+<!--            <option value="شاب">شاب</option>-->
+<!--            <option value="شابة">شابة</option>-->
+<!--            <option value="عمري ثلاثين سنة">عمر الثلاثين</option>-->
+<!--            <option value="عمري اربعين سنة">عمر الاربعين</option>-->
+<!--        </select>-->
+<!--    </div>-->
+
     <center><button id="translateBtn" class="btn btn-primary">التفسيـــر</button></center>
 
 
-    <center><h3 class="mt-5">تفسير الحلم وفقا لتفسيرات ابن سيرين</h3></center>
-    <p id="interpretationResult"></p>
+    <!-- Bootstrap Modals -->
+    <div class="modal fade" id="selectOptionsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">تحذير</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    اختار الحالة الزوجية والفئة العمرية
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">اغلاق</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="waitingModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel1">جاري التفسير</h5>
+                </div>
+                <div class="modal-body">
+                    انتظر لحين ظهور التفسير
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
 </div>
 
 <script>
-    $(document).ready(function () {
-        $('#translateBtn').click(function () {
+  $(document).ready(function () {
+        $('#translateBtn').click(function (e) {
+            e.preventDefault();
+
             var dreamText = $('#dreamText').val();
+            var maritalStatus = $('#maritalStatus').val();
+            var ageGroup = $('#ageGroup').val();
+            var dreamText1=maritalStatus+"  "+ageGroup+"  "+dreamText;
+
+            if (!maritalStatus || !ageGroup) {
+                $('#selectOptionsModal').modal('show'); // Show the modal
+                return;
+            }
+
+            $('#waitingModal').modal('show'); // Show the loading modal
+
             $.ajax({
                 type: 'GET',
                 url: '/api/promote/translate',
-                data: {text: dreamText},
+                data: {text: dreamText1},
                 success: function (data) {
+                    $('#waitingModal').modal('hide'); // Hide the loading modal
                     $('#interpretationResult').text(data);
                 },
                 error: function (error) {
+                    $('#waitingModal').modal('hide'); // Hide the loading modal
                     $('#interpretationResult').text('Error: Unable to get interpretation');
                     console.log(error);
                 }
             });
         });
     });
+
+
 </script>
 
 <!-- Include Bootstrap JavaScript -->

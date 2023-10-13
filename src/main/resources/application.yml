@@ -1,0 +1,26 @@
+palm:
+  api:
+    key: "AIzaSyCWmm1UW5oQ54Z5YyVW1v1kfuwrGG68zRw"
+
+google:
+  api:
+    key: "AIzaSyBuhM_7Wng_Z9-4_AdkHM3GMtKkZ8ae3ng"
+
+
+# Enabling H2 Console
+spring:
+  h2:
+    console:
+      enabled: 'true'
+  datasource:
+    url: 'jdbc:h2:mem:testdb'
+    driver-class-name: 'org.h2.Driver'
+    username: 'sa'
+    password: 'password'
+  jpa:
+    show-sql: 'true'
+    hibernate:
+      ddl-auto: 'update'
+    properties:
+      hibernate:
+        dialect: 'org.hibernate.dialect.H2Dialect'

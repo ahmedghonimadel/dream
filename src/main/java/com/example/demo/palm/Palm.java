@@ -22,6 +22,7 @@ public class Palm {
 
     @GetMapping("/translate")
     public ResponseEntity<String> translateText(@RequestParam String text) {
+        System.out.println(text);
         if (text.length() > 500) {
             return new ResponseEntity<>("Text is too long!", HttpStatus.BAD_REQUEST);
         }
@@ -30,7 +31,15 @@ public class Palm {
             System.out.println(text);
             String englishTranslation = translationService1.translate("ar","en", text);
             System.out.println(englishTranslation);
-            String translatedText = palmService.translate("i need the ibn sirin interpretation of this dream "+englishTranslation+" and summarize and humanize ");
+//            String translatedText = palmService.translate("i need the ibn sirin interpretation of this dream "+englishTranslation+" and summarize and humanize " +
+//                    "i do not need the parts interpretation i need relational humanity interpretation and take in your thought the" +
+//                    "what is my is single, young or married  ");
+            String dreamDescription = "i need the ibn sirin interpretation of this dream " + englishTranslation + " and summarize and humanize ";
+            String detailedRequest = "I do not need the parts interpretation; I need relational humanity interpretation. ";
+            String personalContext = "Consider whether the dreamer is single, young, or married in your interpretation.";
+
+            String translatedText = palmService.translate(dreamDescription + detailedRequest + personalContext);
+
             String arabicTranslation = translationService1.translate("en","ar", translatedText);
 
             return new ResponseEntity<>(arabicTranslation, HttpStatus.OK);

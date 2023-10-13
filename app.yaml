@@ -1,0 +1,4 @@
+runtime: java11
+env_variables:
+  GOOGLE_API_KEY: 'AIzaSyBuhM_7Wng_Z9-4_AdkHM3GMtKkZ8ae3ng'
+  PALM_API_KEY: 'AIzaSyCWmm1UW5oQ54Z5YyVW1v1kfuwrGG68zRw'
